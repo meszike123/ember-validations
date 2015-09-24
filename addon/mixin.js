@@ -83,6 +83,9 @@ var ArrayValidatorProxy = Ember.ArrayProxy.extend(setValidityMixin, {
 export default Ember.Mixin.create(setValidityMixin, {
   init: function() {
     this._super();
+    this.initialize();
+  },
+  initialize: function(){
     this.errors = Errors.create();
     this.dependentValidationKeys = {};
     this.validators = Ember.A();
@@ -101,7 +104,8 @@ export default Ember.Mixin.create(setValidityMixin, {
         set(this, 'errors.' + sender.property, errors);
       });
     }, this);
-  },
+  }
+
   buildValidators: function() {
     var property;
 
