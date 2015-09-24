@@ -104,7 +104,7 @@ export default Ember.Mixin.create(setValidityMixin, {
         set(this, 'errors.' + sender.property, errors);
       });
     }, this);
-  }
+  },
 
   buildValidators: function() {
     var property;
